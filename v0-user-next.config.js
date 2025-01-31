@@ -4,8 +4,8 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  // Remove basePath if you're using a custom domain
-  // basePath: '/your-repo-name', // Only add this if you're not using a custom domain
+ 
+  basePath: '/poorva_portfolio', 
 }
 
 module.exports = nextConfig
