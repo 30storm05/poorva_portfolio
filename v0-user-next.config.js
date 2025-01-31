@@ -6,7 +6,8 @@ const nextConfig = {
   },
  
   basePath: '/poorva_portfolio', 
-}
+  assetPrefix: '/poorva_portfolio/', 
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
 
