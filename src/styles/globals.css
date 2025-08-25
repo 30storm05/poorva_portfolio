@@ -1,0 +1,922 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 14px;
+  --background: #f1f5f9;
+  --foreground: #1e293b;
+  --card: #ffffff;
+  --card-foreground: #1e293b;
+  --popover: #ffffff;
+  --popover-foreground: #1e293b;
+  --primary: #334155;
+  --primary-foreground: #f8fafc;
+  --secondary: #e2e8f0;
+  --secondary-foreground: #334155;
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+  --accent: #e2e8f0;
+  --accent-foreground: #334155;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --border: #e2e8f0;
+  --input: transparent;
+  --input-background: #f8fafc;
+  --switch-background: #cbd5e1;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: #64748b;
+  --chart-1: #3b82f6;
+  --chart-2: #06b6d4;
+  --chart-3: #8b5cf6;
+  --chart-4: #10b981;
+  --chart-5: #f59e0b;
+  --radius: 0.75rem;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #1e293b;
+  --sidebar-primary: #334155;
+  --sidebar-primary-foreground: #f8fafc;
+  --sidebar-accent: #f1f5f9;
+  --sidebar-accent-foreground: #334155;
+  --sidebar-border: #e2e8f0;
+  --sidebar-ring: #64748b;
+  
+  /* Vintage Portfolio Colors - inspired by reference image */
+  --vintage-blue-primary: #4a5d7a;
+  --vintage-blue-secondary: #5b7396;
+  --vintage-blue-light: #7691b8;
+  --vintage-cream: #f5f1e8;
+  --vintage-paper: #f7f3e9;
+  --vintage-brown: #8b6f47;
+  --vintage-red: #b85c5c;
+  --vintage-dark: #2c3e50;
+  --vintage-shadow: rgba(74, 93, 122, 0.15);
+  --sky-blue: #87CEEB;
+  --shadow-blue: #5F9EA0;
+  --light-blue-grey: #B8C8D9;
+  
+  /* Vintage gradients */
+  --vintage-gradient-1: linear-gradient(135deg, #4a5d7a 0%, #5b7396 50%, #7691b8 100%);
+  --vintage-gradient-2: linear-gradient(135deg, #f5f1e8 0%, #f7f3e9 100%);
+  --vintage-gradient-3: linear-gradient(135deg, #8b6f47 0%, #b85c5c 100%);
+  --vintage-paper-texture: radial-gradient(circle at 20% 80%, rgba(139, 111, 71, 0.1) 0%, transparent 50%),
+                           radial-gradient(circle at 80% 20%, rgba(184, 92, 92, 0.1) 0%, transparent 50%);
+}
+
+.dark {
+  --background: #1a202c;
+  --foreground: #f7fafc;
+  --card: #2d3748;
+  --card-foreground: #f7fafc;
+  --popover: #2d3748;
+  --popover-foreground: #f7fafc;
+  --primary: #90a3bf;
+  --primary-foreground: #1a202c;
+  --secondary: #4a5568;
+  --secondary-foreground: #f7fafc;
+  --muted: #4a5568;
+  --muted-foreground: #a0aec0;
+  --accent: #4a5568;
+  --accent-foreground: #f7fafc;
+  --destructive: #f56565;
+  --destructive-foreground: #f7fafc;
+  --border: #4a5568;
+  --input: #4a5568;
+  --ring: #90a3bf;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --chart-1: #63b3ed;
+  --chart-2: #4fd1c7;
+  --chart-3: #b794f6;
+  --chart-4: #68d391;
+  --chart-5: #f6ad55;
+  --sidebar: #2d3748;
+  --sidebar-foreground: #f7fafc;
+  --sidebar-primary: #90a3bf;
+  --sidebar-primary-foreground: #1a202c;
+  --sidebar-accent: #4a5568;
+  --sidebar-accent-foreground: #f7fafc;
+  --sidebar-border: #4a5568;
+  --sidebar-ring: #90a3bf;
+  
+  /* Dark vintage colors */
+  --vintage-blue-primary: #7691b8;
+  --vintage-blue-secondary: #5b7396;
+  --vintage-blue-light: #90a3bf;
+  --vintage-cream: #2d3748;
+  --vintage-paper: #374151;
+  --vintage-brown: #a0845c;
+  --vintage-red: #d69e9e;
+  --vintage-dark: #f7fafc;
+  --vintage-shadow: rgba(118, 145, 184, 0.15);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    background: var(--vintage-blue-primary);
+    background-image: 
+      linear-gradient(45deg, rgba(245, 241, 232, 0.05) 25%, transparent 25%),
+      linear-gradient(-45deg, rgba(245, 241, 232, 0.05) 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, rgba(245, 241, 232, 0.05) 75%),
+      linear-gradient(-45deg, transparent 75%, rgba(245, 241, 232, 0.05) 75%),
+      radial-gradient(circle at 25% 25%, rgba(139, 111, 71, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(184, 92, 92, 0.1) 0%, transparent 50%);
+    background-size: 60px 60px, 60px 60px, 60px 60px, 60px 60px, 200px 200px, 200px 200px;
+    background-position: 0 0, 0 30px, 30px -30px, -30px 0px, 0 0, 0 0;
+    color: var(--vintage-cream);
+    min-height: 100vh;
+  }
+  
+  /* Vintage paper texture */
+  .vintage-paper {
+    background: var(--vintage-cream);
+    background-image: var(--vintage-paper-texture);
+    position: relative;
+    color: var(--vintage-dark);
+    box-shadow: 
+      0 2px 8px var(--vintage-shadow),
+      inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  }
+  
+  /* Torn paper edges */
+  .torn-edge-top::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 0;
+    right: 0;
+    height: 16px;
+    background: var(--vintage-cream);
+    background-image: var(--vintage-paper-texture);
+    clip-path: polygon(0% 50%, 5% 80%, 15% 60%, 25% 85%, 35% 55%, 45% 75%, 55% 65%, 65% 90%, 75% 70%, 85% 85%, 95% 60%, 100% 80%, 100% 100%, 0% 100%);
+  }
+  
+  .torn-edge-bottom::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    right: 0;
+    height: 16px;
+    background: var(--vintage-cream);
+    background-image: var(--vintage-paper-texture);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 40%, 95% 60%, 85% 45%, 75% 70%, 65% 50%, 55% 75%, 45% 45%, 35% 65%, 25% 55%, 15% 80%, 5% 50%, 0% 70%);
+  }
+  
+  /* Vintage gradients */
+  .vintage-gradient {
+    background: var(--vintage-gradient-1);
+  }
+  
+  .vintage-gradient-2 {
+    background: var(--vintage-gradient-2);
+  }
+  
+  .vintage-gradient-3 {
+    background: var(--vintage-gradient-3);
+  }
+  
+  /* Vintage stamp effect */
+  .vintage-stamp {
+    background: var(--vintage-red);
+    color: var(--vintage-cream);
+    border: 3px solid var(--vintage-cream);
+    border-radius: 4px;
+    position: relative;
+    box-shadow: 
+      0 2px 8px var(--vintage-shadow),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  }
+  
+  .vintage-stamp::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      var(--vintage-cream) 2px,
+      var(--vintage-cream) 4px
+    );
+    border-radius: 4px;
+    z-index: -1;
+  }
+  
+  /* Vintage button */
+  .vintage-button {
+    background: var(--vintage-cream);
+    background-image: var(--vintage-paper-texture);
+    border: 2px solid var(--vintage-brown);
+    color: var(--vintage-dark);
+    box-shadow: 
+      0 4px 8px var(--vintage-shadow),
+      inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    transform: rotate(-1deg);
+    transition: all 0.3s ease;
+  }
+  
+  .vintage-button:hover {
+    transform: rotate(0deg) scale(1.05);
+    box-shadow: 
+      0 6px 12px var(--vintage-shadow),
+      inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  }
+  
+  /* Scrapbook elements */
+  .scrapbook-photo {
+    background: white;
+    box-shadow: 
+      0 4px 12px var(--vintage-shadow),
+      inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    border: 8px solid white;
+    transform: rotate(-2deg);
+    position: relative;
+  }
+  
+  .scrapbook-photo::after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 24px;
+    height: 24px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    transform: rotate(45deg);
+  }
+  
+  /* Vintage navigation */
+  .vintage-nav {
+    background: var(--vintage-cream);
+    background-image: var(--vintage-paper-texture);
+    border: 2px solid var(--vintage-brown);
+    box-shadow: 
+      0 4px 12px var(--vintage-shadow),
+      inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    transform: rotate(-0.5deg);
+  }
+  
+  /* Text effects */
+  .text-vintage {
+    color: var(--vintage-dark);
+    text-shadow: 1px 1px 2px rgba(139, 111, 71, 0.2);
+  }
+  
+  .text-vintage-accent {
+    color: var(--vintage-brown);
+    text-shadow: 1px 1px 2px rgba(139, 111, 71, 0.3);
+  }
+  
+  .text-vintage-gradient {
+    background: var(--vintage-gradient-3);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: none;
+  }
+  
+  /* Handwriting style */
+  .handwriting {
+    font-family: 'Brush Script MT', cursive;
+    transform: rotate(-2deg);
+    color: var(--vintage-brown);
+  }
+  
+  /* Typewriter style */
+  .typewriter {
+    font-family: 'Courier New', monospace;
+    color: var(--vintage-dark);
+    letter-spacing: 0.5px;
+  }
+  
+  /* Portfolio Folder Effect */
+  .portfolio-folder {
+    position: relative;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+  }
+  
+  .folder-base {
+    background: var(--vintage-brown);
+    background-image: 
+      linear-gradient(45deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%),
+      linear-gradient(-45deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, rgba(0, 0, 0, 0.1) 75%),
+      linear-gradient(-45deg, transparent 75%, rgba(0, 0, 0, 0.1) 75%);
+    background-size: 8px 8px;
+    box-shadow: 
+      0 8px 32px var(--vintage-shadow),
+      inset 0 2px 4px rgba(255, 255, 255, 0.1),
+      inset 0 -2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    position: relative;
+    overflow: visible;
+    /* Responsive heights */
+    min-height: 400px;
+    height: 60vh;
+    max-height: 600px;
+  }
+  
+  @media (min-width: 768px) {
+    .folder-base {
+      min-height: 500px;
+      height: 65vh;
+      max-height: 700px;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .folder-base {
+      min-height: 600px;
+      height: 70vh;
+      max-height: 800px;
+    }
+  }
+  
+  .folder-tab {
+    position: absolute;
+    top: -20px;
+    left: 40px;
+    width: 120px;
+    height: 40px;
+    background: var(--vintage-brown);
+    background-image: 
+      linear-gradient(45deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%),
+      linear-gradient(-45deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%);
+    background-size: 6px 6px;
+    border-radius: 8px 8px 0 0;
+    box-shadow: 
+      0 4px 12px var(--vintage-shadow),
+      inset 0 2px 4px rgba(255, 255, 255, 0.1);
+    z-index: 1;
+  }
+  
+  .folder-tab::after {
+    content: 'PORTFOLIO';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--vintage-cream);
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  
+  .folder-cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--vintage-brown);
+    background-image: 
+      linear-gradient(45deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%),
+      linear-gradient(-45deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, rgba(0, 0, 0, 0.1) 75%),
+      linear-gradient(-45deg, transparent 75%, rgba(0, 0, 0, 0.1) 75%);
+    background-size: 8px 8px;
+    border-radius: 8px;
+    box-shadow: 
+      0 12px 40px var(--vintage-shadow),
+      inset 0 2px 4px rgba(255, 255, 255, 0.1),
+      inset 0 -2px 4px rgba(0, 0, 0, 0.1);
+    transform-origin: left center;
+    z-index: 10;
+    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  .folder-cover.open {
+    transform: rotateY(-165deg);
+  }
+  
+  .folder-cover::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    border: 2px dashed var(--vintage-cream);
+    border-radius: 4px;
+    opacity: 0.3;
+  }
+  
+  .folder-cover::after {
+    content: 'POORVA YADAV\APORTFOLIO';
+    white-space: pre;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--vintage-cream);
+    font-family: 'Courier New', monospace;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    line-height: 1.6;
+  }
+  
+  @media (min-width: 480px) {
+    .folder-cover::after {
+      font-size: 32px;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .folder-cover::after {
+      font-size: 48px;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .folder-cover::after {
+      font-size: 64px;
+    }
+  }
+  
+  .folder-content {
+    position: relative;
+    z-index: 5;
+    background: transparent;
+    padding: 20px 20px 20px 60px;
+    min-height: 100%;
+  }
+  
+  .folder-rings {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    z-index: 6;
+  }
+  
+  .folder-ring {
+    width: 20px;
+    height: 20px;
+    border: 3px solid var(--vintage-dark);
+    border-radius: 50%;
+    background: var(--vintage-cream);
+    box-shadow: 
+      0 2px 4px var(--vintage-shadow),
+      inset 0 1px 2px rgba(255, 255, 255, 0.8);
+  }
+  
+  /* Vintage Stickers and Charms */
+  .vintage-sticker {
+    background: var(--vintage-red);
+    color: var(--vintage-cream);
+    border: 2px solid var(--vintage-cream);
+    border-radius: 50%;
+    box-shadow: 
+      0 4px 12px var(--vintage-shadow),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    z-index: 5;
+  }
+  
+  /* Mobile responsive decorative elements */
+  @media (max-width: 640px) {
+    .vintage-sticker,
+    .vintage-charm,
+    .vintage-medal,
+    .vintage-badge {
+      z-index: 5 !important;
+    }
+    
+    /* Ensure main content has higher z-index on mobile */
+    .folder-content h1,
+    .folder-content h2,
+    .folder-content h3 {
+      position: relative;
+      z-index: 25 !important;
+    }
+  }
+  
+  .vintage-charm {
+    background: var(--vintage-brown);
+    color: var(--vintage-cream);
+    border: 2px solid var(--vintage-cream);
+    border-radius: 4px;
+    box-shadow: 
+      0 3px 8px var(--vintage-shadow),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    letter-spacing: 1px;
+    z-index: 5;
+  }
+  
+  .vintage-medal {
+    background: linear-gradient(45deg, #ffd700, #ffed4e);
+    color: var(--vintage-dark);
+    border: 3px solid var(--vintage-brown);
+    border-radius: 50%;
+    box-shadow: 
+      0 4px 12px var(--vintage-shadow),
+      inset 0 2px 4px rgba(255, 255, 255, 0.4);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    z-index: 5;
+  }
+  
+  .vintage-badge {
+    background: var(--vintage-blue-secondary);
+    color: var(--vintage-cream);
+    border: 2px solid var(--vintage-cream);
+    border-radius: 8px;
+    box-shadow: 
+      0 3px 10px var(--vintage-shadow),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    z-index: 5;
+  }
+  
+  .paperclip {
+    width: 30px;
+    height: 60px;
+    border: 3px solid var(--vintage-dark);
+    border-radius: 15px 15px 5px 5px;
+    background: transparent;
+    position: absolute;
+    z-index: 5;
+  }
+  
+  .paperclip::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: 20px;
+    border: 2px solid var(--vintage-dark);
+    border-radius: 10px;
+    background: transparent;
+  }
+  
+  /* Open Button Styles */
+  .open-button {
+    background: var(--sky-blue);
+    color: var(--vintage-dark);
+    border: 2px solid var(--vintage-dark);
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    box-shadow: 4px 4px 0px var(--shadow-blue);
+  }
+  
+  @media (min-width: 640px) {
+    .open-button {
+      padding: 10px 24px;
+      font-size: 16px;
+      box-shadow: 5px 5px 0px var(--shadow-blue);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .open-button {
+      padding: 12px 32px;
+      font-size: 18px;
+      box-shadow: 6px 6px 0px var(--shadow-blue);
+    }
+  }
+  
+  .open-button:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px var(--shadow-blue);
+  }
+  
+  @media (min-width: 640px) {
+    .open-button:hover {
+      box-shadow: 3px 3px 0px var(--shadow-blue);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .open-button:hover {
+      box-shadow: 4px 4px 0px var(--shadow-blue);
+    }
+  }
+  
+  .open-button.clicked {
+    background: white;
+    box-shadow: none;
+    transform: translate(4px, 4px);
+  }
+  
+  .open-button.clicked:hover {
+    transform: translate(4px, 4px);
+    box-shadow: none;
+  }
+  
+  @media (min-width: 640px) {
+    .open-button.clicked {
+      transform: translate(5px, 5px);
+    }
+    
+    .open-button.clicked:hover {
+      transform: translate(5px, 5px);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .open-button.clicked {
+      transform: translate(6px, 6px);
+    }
+    
+    .open-button.clicked:hover {
+      transform: translate(6px, 6px);
+    }
+  }
+  
+  /* Wax Seal Effect */
+  .wax-seal {
+    background: var(--vintage-red);
+    border-radius: 50%;
+    position: absolute;
+    box-shadow: 
+      0 4px 12px var(--vintage-shadow),
+      inset 0 2px 4px rgba(255, 255, 255, 0.2),
+      inset 0 -2px 4px rgba(0, 0, 0, 0.3);
+    z-index: 5;
+  }
+  
+  .wax-seal::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    height: 70%;
+    border: 2px solid var(--vintage-cream);
+    border-radius: 50%;
+  }
+  
+  .wax-seal::after {
+    content: '✦';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--vintage-cream);
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  /* Postal Mark */
+  .postal-mark {
+    background: transparent;
+    border: 3px solid var(--vintage-dark);
+    border-radius: 50%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+  }
+  
+  .postal-mark::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: var(--vintage-dark);
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+  
+  .postal-mark::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background: var(--vintage-dark);
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+  }
+  
+  /* Experience section hover effects */
+  .experience-card {
+    transition: all 0.3s ease;
+  }
+  
+  .experience-card:hover {
+    background: var(--light-blue-grey);
+    transform: rotate(0deg) scale(1.02);
+  }
+  
+  .experience-card:active {
+    background: var(--light-blue-grey);
+    opacity: 0.9;
+  }
+  
+  /* Text shadow utilities */
+  .text-shadow-lg {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Responsive section spacing to prevent navigation overlap */
+  section {
+    scroll-margin-top: 80px;
+    padding-top: 60px;
+    padding-bottom: 40px;
+    margin-bottom: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    section {
+      scroll-margin-top: 100px;
+      padding-top: 80px;
+      padding-bottom: 30px;
+      margin-bottom: 15px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    section {
+      scroll-margin-top: 120px;
+      padding-top: 100px;
+      padding-bottom: 20px;
+      margin-bottom: 10px;
+    }
+  }
+  
+  /* Ensure mobile navigation doesn't cause horizontal scroll */
+  .mobile-nav-container {
+    max-width: calc(100vw - 32px);
+  }
+  
+  /* Prevent horizontal scroll on all content */
+  * {
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+  
+  /* Better mobile spacing */
+  @media (max-width: 768px) {
+    .vintage-paper {
+      margin: 8px;
+      padding: 12px;
+    }
+    
+    .space-y-16 > * + * {
+      margin-top: 2rem !important;
+    }
+    
+    .space-y-12 > * + * {
+      margin-top: 1.5rem !important;
+    }
+    
+    .space-y-8 > * + * {
+      margin-top: 1rem !important;
+    }
+  }
+}
+
+/**
+ * Base typography. This is not applied to elements which have an ancestor with a Tailwind text class.
+ */
+@layer base {
+  :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
+    h1 {
+      font-size: var(--text-2xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h2 {
+      font-size: var(--text-xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h3 {
+      font-size: var(--text-lg);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h4 {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    p {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+
+    label {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    button {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    input {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+  }
+}
+
+html {
+  font-size: var(--font-size);
+  scroll-behavior: smooth;
+}
