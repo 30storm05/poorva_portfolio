@@ -22,7 +22,7 @@ export function ExperienceSection() {
       ],
       stamp: "CURRENT",
       driveLink:
-        "https://drive.google.com/drive/folders/1mRwcWYdlpxwxXJ_BYKci4qJb6g0HVjHZ",
+        "https://drive.google.com/drive/folders/your-folder-id-1",
     },
     {
       title: "Joint Secratary and Head Content Designer",
@@ -38,7 +38,7 @@ export function ExperienceSection() {
       ],
       stamp: "Design & Management ",
       driveLink:
-        "https://drive.google.com/drive/https://drive.google.com/drive/folders/11wMtg1iOQyR8pD5Z7LU92pNDFERoDgHi",
+        "https://drive.google.com/drive/folders/your-folder-id-2",
     },
     {
       title: "Department Student Respresentative",

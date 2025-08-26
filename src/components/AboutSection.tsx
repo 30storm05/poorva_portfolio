@@ -70,7 +70,7 @@ export function AboutSection() {
   const interests = [
     { icon: Camera, label: "Reading" },
     { icon: Palette, label: "Art & Design" },
-    { icon: Code, label: "Generative AI" },
+    { icon: Code, label: "AI & Automation" },
   ];
 
   return (
@@ -195,7 +195,7 @@ export function AboutSection() {
                   className="scrapbook-photo w-80 h-96 overflow-hidden relative"
                 >
                   <ImageWithFallback
-                    src="/images/about/me.jpg"
+                    src="https://images.unsplash.com/photo-1494790108755-2616b00bc2b6?w=400&h=500&fit=crop&crop=face"
                     alt="Poorva Yadav - Designer"
                     className="w-full h-full object-cover"
                   />

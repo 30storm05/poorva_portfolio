@@ -11,40 +11,46 @@ export function ProjectSection() {
 
   const posterProjects = [
     {
-      title: 'Canva Poster 1',
-      posterImage: '/images/posters/1.png'
+      title: 'Music Festival Poster',
+      description: 'Vibrant poster design for an indie music festival featuring dynamic typography and psychedelic elements.',
+      year: '2024',
+      category: 'Event Design',
+      posterImage: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=600&fit=crop'
     },
     {
-      title: 'Adobe Illustrator Poster 1',
-      posterImage: '/images/posters/2.png'
+      title: 'Environmental Awareness Campaign',
+      description: 'Impactful poster series promoting environmental conservation with bold graphics and eco-friendly themes.',
+      year: '2024',
+      category: 'Social Campaign',
+      posterImage: 'https://images.unsplash.com/photo-1569163139394-de44bc9b9591?w=400&h=600&fit=crop'
     },
     {
-      title: 'Adobe Illustrator Poster 2',
-      posterImage: '/images/posters/3.png'
+      title: 'Film Festival Poster',
+      description: 'Elegant poster design for an international film festival combining cinematic elements with modern typography.',
+      year: '2023',
+      category: 'Cultural Event',
+      posterImage: 'https://images.unsplash.com/photo-1489599511850-5c5e6b72c9f9?w=400&h=600&fit=crop'
     },
     {
-      title: 'Canva Poster 2',
-      posterImage: '/images/posters/4.png'
+      title: 'Tech Conference Poster',
+      description: 'Futuristic poster design for a technology conference featuring geometric patterns and digital aesthetics.',
+      year: '2023',
+      category: 'Corporate Event',
+      posterImage: 'https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=600&fit=crop'
     },
     {
-      title: 'Canva Poster 3',
-      posterImage: '/images/posters/5.png'
+      title: 'Art Exhibition Poster',
+      description: 'Artistic poster for a contemporary art exhibition showcasing minimalist design and sophisticated color palette.',
+      year: '2023',
+      category: 'Art & Culture',
+      posterImage: 'https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=400&h=600&fit=crop'
     },
     {
-      title: 'Canva Poster 4',
-      posterImage: '/images/posters/6.png'
-    },
-    {
-      title: 'Canva Poster 5',
-      posterImage: '/images/posters/7.png'
-    },
-    {
-      title: 'Adobe Illustrator Poster 3',
-      posterImage: '/images/posters/8.png'
-    },
-    {
-      title: 'Adobe Illustrator Poster 4',
-      posterImage: '/images/posters/9.png'
+      title: 'Food Festival Poster',
+      description: 'Appetizing poster design for a local food festival featuring hand-drawn illustrations and warm colors.',
+      year: '2024',
+      category: 'Food & Events',
+      posterImage: 'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=400&h=600&fit=crop'
     }
   ];
 

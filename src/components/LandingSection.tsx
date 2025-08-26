@@ -419,12 +419,16 @@ export function LandingSection() {
                     .getElementById("about")
                     ?.scrollIntoView({ behavior: "smooth" })
                 }
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 2, repeat: Infinity }}
+                animate={{ 
+                  y: [0, -10, 0],
+                  opacity: 1
+                }}
+                transition={{ 
+                  y: { duration: 2, repeat: Infinity },
+                  opacity: { delay: 1.2, duration: 0.6 }
+                }}
                 className="text-vintage-cream hover:text-white transition-colors"
                 initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1.2, duration: 0.6 }}
               >
                 <ChevronDown className="w-8 h-8 mx-auto" />
               </motion.button>
